@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="therapy.pages.Perfil"
+             Title="Perfil"
+             BackgroundColor="White">
+
+    <VerticalStackLayout Padding="20" Spacing="20" VerticalOptions="Start">
+
+        <!-- Imagen -->
+        <Image Source="logoanimal.png"
+               HeightRequest="100"/>
+
+        <!-- nombre y correo del usuario -->
+        <Label x:Name="UserNameLabel"
+               FontSize="20"
+               FontFamily="Baloo"
+               FontAttributes="Bold"
+               TextColor="#4f3f9b"
+               HorizontalOptions="Center"
+               Text="nombre del Usuario"/>
+
+        <Label x:Name="UserEmailLabel"
+               FontSize="16"
+               FontFamily="Baloo"
+               TextColor="Gray"
+               HorizontalOptions="Center"
+               Text="correo@ejemplo.com"/>
+
+        <!-- Opciones del menú -->
+        <VerticalStackLayout Padding="10" Spacing="15">
+
+            <!-- Opción: Datos Personales -->
+            <Grid Padding="10" ColumnDefinitions="Auto, *, Auto" HorizontalOptions="Fill">
+                <Image Source="datos.png" HeightRequest="25" WidthRequest="25" VerticalOptions="Center"/>
+                <Label Text="Datos Personales"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
+                       Grid.Column="1"
+                       Margin="15,0,0,0"
+                       TextColor="#4f3f9b"/>
+                <ImageButton Source="flecha.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="End" VerticalOptions="Center" Grid.Column="2" Clicked="OnDatosPersonalesClicked"/>
+            </Grid>
+
+            <!-- Opción: Seguimiento -->
+            <Grid Padding="10" ColumnDefinitions="Auto, *, Auto" HorizontalOptions="Fill">
+                <Image Source="seguimiento.png" HeightRequest="25" WidthRequest="25" VerticalOptions="Center"/>
+                <Label Text="Seguimiento"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
+                       Grid.Column="1"
+                       Margin="15,0,0,0"
+                       TextColor="#4f3f9b"/>
+                <ImageButton Source="flecha.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="End" VerticalOptions="Center" Grid.Column="2" Clicked="OnSeguimientoClicked"/>
+            </Grid>
+
+            <!-- Opción: Animales -->
+            <Grid Padding="10" ColumnDefinitions="Auto, *, Auto" HorizontalOptions="Fill">
+                <Image Source="huella.png" HeightRequest="25" WidthRequest="25" VerticalOptions="Center"/>
+                <Label Text="Animales"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
+                       Grid.Column="1"
+                       Margin="15,0,0,0"
+                       TextColor="#4f3f9b"/>
+                <ImageButton Source="flecha.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="End" VerticalOptions="Center" Grid.Column="2" Clicked="OnAnimalesClicked"/>
+            </Grid>
+
+            <!-- Opción: Cerrar Sesión -->
+            <Grid Padding="10" ColumnDefinitions="Auto, *, Auto" HorizontalOptions="Fill">
+                <Image Source="cerrar.png" HeightRequest="25" WidthRequest="25" VerticalOptions="Center"/>
+                <Label Text="Cerrar Sesión"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
+                       Grid.Column="1"
+                       Margin="15,0,0,0"
+                       TextColor="Red"/>
+                <ImageButton Source="flecha.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="End" VerticalOptions="Center" Grid.Column="2" Clicked="OnCerrarSesionClicked"/>
+            </Grid>
+
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="therapy.pages.GaleriaMascotas"
+             Title="Galería de Mascotas"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Text="Galería de Mascotas"
+                   FontSize="24"
+                   FontFamily="Baloo"
+                   FontAttributes="Bold"
+                   TextColor="#4f3f9b"
+                   HorizontalOptions="Center" />
+
+            <CollectionView ItemsSource="{Binding ListaDeMascotas}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="3" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="5" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Frame Padding="0" CornerRadius="10" IsClippedToBounds="True" WidthRequest="100" HeightRequest="100">
+                                <Image Source="{Binding foto_animal}" Aspect="AspectFill" />
+                            </Frame>
+                            <Label Text="{Binding nombre}" FontSize="14" HorizontalOptions="Center" TextColor="#4f3f9b" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

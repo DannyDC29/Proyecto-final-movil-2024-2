@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="therapy.pages.Login"
+             Title="Iniciar sesión"
+             BackgroundColor="White"
+             NavigationPage.HasBackButton="False">
+
+    <VerticalStackLayout Padding="30,0,30,30" Spacing="20" VerticalOptions="Center">
+
+        <!-- Logo -->
+        <Image Source="logo.jpg" HeightRequest="150" HorizontalOptions="Center" Margin="0,0,0,50"/>
+
+        <!-- Campo de Email -->
+        <VerticalStackLayout Spacing="5">
+            <Label Text="Correo Electrónico"
+                   FontSize="18"
+                   TextColor="#2E3A59"
+                   FontFamily="Baloo" />
+            <Entry x:Name="EmailEntry"
+                   Placeholder="example@email.com"
+                   Keyboard="Email"
+                   FontSize="16"
+                   TextColor="Black"
+                   PlaceholderColor="#B0B0B0"
+                   BackgroundColor="White" />
+        </VerticalStackLayout>
+
+        <!-- Campo de Contraseña -->
+        <VerticalStackLayout Spacing="5">
+            <Label Text="Contraseña"
+                   FontSize="18"
+                   TextColor="#2E3A59"
+                   FontFamily="Baloo" />
+            <Frame HasShadow="False" Padding="0" BorderColor="Transparent">
+                <Grid>
+                    <Entry x:Name="PasswordEntry"
+                           Placeholder="Contraseña"
+                           IsPassword="True"
+                           FontSize="16"
+                           TextColor="Black"
+                           PlaceholderColor="#B0B0B0"
+                           BackgroundColor="White" />
+                    <ImageButton Source="eye.png"
+                                 HorizontalOptions="End"
+                                 VerticalOptions="Center"
+                                 BackgroundColor="Transparent"
+                                 Clicked="TogglePasswordVisibility" />
+                </Grid>
+            </Frame>
+        </VerticalStackLayout>
+
+        <!-- Botón de Inicio de Sesión -->
+        <Button Text="Iniciar sesión"
+                FontSize="16"
+                BackgroundColor="#1b185c"
+                TextColor="White"
+                HeightRequest="50"
+                CornerRadius="10"
+                Clicked="OnSignInClicked" />
+    </VerticalStackLayout>
+</ContentPage>

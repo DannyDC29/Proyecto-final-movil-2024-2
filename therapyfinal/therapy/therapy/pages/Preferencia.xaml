@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="therapy.pages.Preferencia"
+             Title="Test de preferencia"
+             BackgroundColor="White">
+
+    <VerticalStackLayout Padding="20" Spacing="15" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+
+        <!-- Título -->
+        <Label Text="¿QUÉ PREFIERES?"
+               FontSize="30"
+               FontFamily="Baloo"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="#4f3f9b"/>
+
+        <!-- Texto descriptivo debajo del título -->
+        <Label Text="Ayúdanos a seleccionar el mejor amigo para ti.
+               
+               Por favor selecciona el tipo de mascota que prefieras. 🐾"
+               FontSize="25"
+               TextColor="Gray"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"/>
+
+        <!-- Línea decorativa -->
+        <BoxView HeightRequest="1" WidthRequest="200" Color="Gray" HorizontalOptions="Center"/>
+
+        <!-- Botones de selección con imágenes -->
+        <HorizontalStackLayout Spacing="40" HorizontalOptions="Center" Margin="0,60,0,0">
+
+            <!-- Botón de Gato -->
+            <ImageButton x:Name="GatoButton"
+                         Source="gato.png" 
+                         WidthRequest="100" 
+                         HeightRequest="100"
+                         Clicked="OnGatoButtonClicked"/>
+
+            <!-- Botón de Perro -->
+            <ImageButton x:Name="PerroButton"
+                         Source="perro.png" 
+                         WidthRequest="100" 
+                         HeightRequest="100"
+                         Clicked="OnPerroButtonClicked"/>
+
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

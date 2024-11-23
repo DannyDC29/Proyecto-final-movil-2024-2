@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="therapy.MainPage"
+             BackgroundColor="White">
+
+    <VerticalStackLayout
+        VerticalOptions="StartAndExpand"
+        HorizontalOptions="CenterAndExpand"
+        Padding="0,200,0,0">
+        <!-- Aumenta el valor si necesitas que el logo esté más arriba -->
+
+        <!-- Logo de la aplicación centrado -->
+        <Image
+            x:Name="LogoImage"
+            Source="logo.jpg"
+            HeightRequest="320"
+            WidthRequest="320"
+            Aspect="AspectFit"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+
+    </VerticalStackLayout>
+</ContentPage>
+

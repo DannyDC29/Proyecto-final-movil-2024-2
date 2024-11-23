@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="therapy.pages.Mascotas"
+             Title="Lista de Mascotas"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+            <Label Text="¡CONOCE A TU PRÓXIMO GUARDIÁN! 🐾"
+                   FontSize="20"
+                   FontFamily="Baloo"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#4f3f9b" />
+            <Label Text="Explora las opciones y encuentra a tu compañero perfecto.&#10;Cada guardián tiene algo especial que ofrecerte."
+                   FontSize="18"
+                   TextColor="Gray"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
+
+            <!-- CollectionView con diseño de cuadrícula -->
+            <CollectionView ItemsSource="{Binding ListaDeMascotas}" SelectionMode="Single" SelectionChanged="OnMascotaSelected">
+                <!-- Configuración de cuadrícula: 3 columnas -->
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="3" />
+                </CollectionView.ItemsLayout>
+
+                <!-- Plantilla de datos para cada elemento -->
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Frame Padding="0" CornerRadius="20" IsClippedToBounds="True" WidthRequest="100" HeightRequest="100">
+                                <Image Source="{Binding foto_animal}" Aspect="AspectFill" />
+                            </Frame>
+                            <Label Text="{Binding nombre}" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

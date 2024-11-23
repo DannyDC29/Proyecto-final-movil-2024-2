@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="therapy.pages.Seguimiento"
+             Title="Seguimiento"
+             BackgroundColor="White">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Título -->
+            <Label Text="SEGUIMIENTO"
+                   FontSize="24"
+                   FontFamily="Baloo"
+                   FontAttributes="Bold"
+                   TextColor="#4f3f9b"
+                   HorizontalOptions="Center" />
+
+            <!-- Descripción -->
+            <Label Text="Queremos estar seguros que tú y nuestro amigo están compartiendo momentos inolvidables. Así que aquí podrás subir una foto y un comentario sobre cómo te has sentido."
+                   FontSize="16"
+                   TextColor="Gray"
+                   HorizontalTextAlignment="Center" />
+
+            <!-- Área para subir foto y descripción -->
+            <VerticalStackLayout Spacing="15" Padding="10">
+
+                <!-- Botón para seleccionar foto -->
+                <Button Text="Subir Foto"
+                        BackgroundColor="#7E57C2"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        HeightRequest="50"
+                        Clicked="OnUploadPhotoClicked" />
+
+                <!-- Vista previa de la foto seleccionada -->
+                <Image x:Name="SelectedImageView"
+                       HeightRequest="150"
+                       Aspect="AspectFit"
+                       HorizontalOptions="Center"
+                       IsVisible="False" />
+
+                <!-- Entrada para comentario -->
+                <Editor x:Name="CommentEditor"
+                        Placeholder="Escribe tu comentario aquí..."
+                        FontSize="16"
+                        HeightRequest="100"
+                        TextColor="#4f3f9b"
+                        BackgroundColor="#F5F5F5" />
+
+                <!-- Botón para enviar -->
+                <Button Text="Enviar"
+                        BackgroundColor="#4f3f9b"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        HeightRequest="50"
+                        Clicked="OnSubmitClicked" />
+            </VerticalStackLayout>
+
+            <!-- Área de fotos y comentarios -->
+            <VerticalStackLayout Padding="10" Spacing="15">
+                <Label Text="Tu progreso:"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#4f3f9b" />
+
+                <VerticalStackLayout x:Name="PostsContainer" 
+                                     BindableLayout.ItemsSource="{Binding Seguimientos}" 
+                                     Spacing="15">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="10" 
+                                   Margin="0,10" 
+                                   BackgroundColor="#EDEBF6" 
+                                   CornerRadius="10" 
+                                   HasShadow="True">
+                                <VerticalStackLayout Spacing="10">
+                                    <Image Source="{Binding FotoSeguimiento}" 
+                                           Aspect="AspectFit" 
+                                           HeightRequest="150" />
+                                    <Label Text="{Binding Descripcion}" 
+                                           FontSize="14" 
+                                           TextColor="#4f3f9b" 
+                                           HorizontalTextAlignment="Center" />
+                                </VerticalStackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

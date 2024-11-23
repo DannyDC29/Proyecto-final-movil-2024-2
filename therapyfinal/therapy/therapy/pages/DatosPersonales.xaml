@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="therapy.pages.DatosPersonales"
+             Title="Datos Personales"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="30" VerticalOptions="StartAndExpand">
+
+            <!-- Encabezado con nombre y foto -->
+            <Grid>
+                <BoxView Color="#fff" HeightRequest="180" HorizontalOptions="Fill" />
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Padding="10">
+                    <Image Source="logoanimal.png" HeightRequest="100" Margin="0,0,0,30"/>
+                    <Label x:Name="UserNameLabel" 
+                           FontSize="20" 
+                           FontFamily="Baloo"
+                           FontAttributes="Bold" 
+                           TextColor="#4f3f9b" 
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Grid>
+
+            <!-- Sección de datos personales -->
+            <VerticalStackLayout Spacing="20" Padding="10">
+
+                <!-- Campo: Email -->
+                <Grid x:Name="EmailGrid" Margin="0,20,0,0" ColumnDefinitions=".2*,.8*">
+                    <RoundRectangle BackgroundColor="#EDEBF6" CornerRadius="10" HeightRequest="60" WidthRequest="60"/>
+                    <Image Source="email.png" HeightRequest="30" WidthRequest="30"/>
+                    <Label Grid.Column="1" x:Name="UserEmailLabel" FontSize="16" TextColor="#4f3f9b" VerticalOptions="Center" />
+                </Grid>
+
+                <!-- Campo: Teléfono -->
+                <Grid x:Name="PhoneGrid" Margin="0,20,0,0" ColumnDefinitions=".2*,.8*">
+                    <RoundRectangle BackgroundColor="#EDEBF6" CornerRadius="10" HeightRequest="60" WidthRequest="60"/>
+                    <Image Source="phone.png" HeightRequest="30" WidthRequest="30"/>
+                    <Label Grid.Column="1" x:Name="UserPhoneLabel" FontSize="16" TextColor="#4f3f9b" VerticalOptions="Center" />
+                </Grid>
+
+                <!-- Campo: Dirección -->
+                <Grid x:Name="AddressGrid" Margin="0,20,0,0" ColumnDefinitions=".2*,.8*">
+                    <RoundRectangle BackgroundColor="#EDEBF6" CornerRadius="10" HeightRequest="60" WidthRequest="60"/>
+                    <Image Source="casa.png" HeightRequest="30" WidthRequest="30"/>
+                    <Label Grid.Column="1" x:Name="UserAddressLabel" FontSize="16" TextColor="#4f3f9b" VerticalOptions="Center" />
+                </Grid>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

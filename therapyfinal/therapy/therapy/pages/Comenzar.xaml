@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="therapy.pages.Comenzar"
+             Title=""
+             NavigationPage.HasBackButton="False">
+
+    <VerticalStackLayout Padding="20" Spacing="15" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+
+        <!-- Logo centrado -->
+        <Image Source="logo.png" HeightRequest="250" WidthRequest="250" HorizontalOptions="Center" />
+
+        <!-- Título de Bienvenida -->
+        <Label
+                Text="¡Bienvenido a la familia Animal Therapy! 🐾"
+               FontSize="28"
+               FontAttributes="Bold"
+               TextColor="#1b185c"
+               FontFamily="Baloo"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               HorizontalTextAlignment="Center" />
+
+        <!-- Descripción -->
+        <Label Text="Aquí encontrarás un espacio seguro y acogedor junto a tu querido amigo. Nuestro objetivo es brindarte apoyo y compartir en cada paso del camino. Estamos aquí para ti y juntos, crearemos momentos especiales de conexión y sanación. ¡Explora y disfruta de la experiencia! ❤️🐶"
+               FontSize="15"
+               TextColor="#2A3D66"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               HorizontalTextAlignment="Center"
+               Margin="0,10,0,50" />
+
+        <!-- Botón de Comenzar -->
+        <Button Text="Comenzar"
+                BackgroundColor="#1b185c"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontFamily="Baloo"
+                CornerRadius="10"
+                HeightRequest="50"
+                WidthRequest="200"
+                Clicked="OnComenzarClicked"
+                HorizontalOptions="Center" />
+
+    </VerticalStackLayout>
+</ContentPage>
